@@ -24,14 +24,6 @@ function animatePress (color){
 
 }
 
-function sleep(milliseconds) {
-   const date = Date.now();
-   let currentDate = null;
-   do {
-     currentDate = Date.now();
-   } while (currentDate - date < milliseconds);
- }
-
 // Game Functions // 
 
 function nextSequence () { // Creates a random number between 0-3 to choose a button and then gives it to the user
@@ -43,14 +35,18 @@ function nextSequence () { // Creates a random number between 0-3 to choose a bu
     
  }
 
+
  function animateSequence() {
 
+   setTimeout(() => {
       var c = gamePattern.length - 1 ;
       $("#"+gamePattern[c]).fadeOut(100).fadeIn(100);
       playSound(gamePattern[c]);
 
+   }, 1000);
 
  }
+
 
  function checkAnswer(currentLevel){
    var correct = true ;
